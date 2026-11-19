@@ -1,0 +1,29 @@
+digraph "test" {
+rankdir="LR";
+remincross=true;
+n1 [ shape=octagon, label="A[3]", color="black", fontcolor="black"];
+n2 [ shape=octagon, label="A[2]", color="black", fontcolor="black"];
+n3 [ shape=octagon, label="A[1]", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="A[0]", color="black", fontcolor="black"];
+n7 [ shape=octagon, label="A[4]", color="black", fontcolor="black"];
+n8 [ shape=octagon, label="A[5]", color="black", fontcolor="black"];
+n9 [ shape=octagon, label="Y", color="black", fontcolor="black"];
+n10 [ shape=octagon, label="A[6]", color="black", fontcolor="black"];
+c14 [ shape=record, label="{{<p11> A|<p12> B|<p13> C|<p9> Y}|$6.genblk0.genblk4.g\nOR3X1|{}}",  ];
+c15 [ shape=record, label="{{<p11> A|<p12> B|<p13> C|<p9> Y}|$8.genblk0.genblk4.g\nOR3X1|{}}",  ];
+c16 [ shape=record, label="{{<p11> A|<p12> B|<p13> C|<p9> Y}|$5.genblk0.genblk4.g\nOR3X1|{}}",  ];
+n1:e -> c14:p11:w [color="black", fontcolor="black", label=""];
+n10:e -> c15:p13:w [color="black", fontcolor="black", label=""];
+n2:e -> c16:p13:w [color="black", fontcolor="black", label=""];
+n3:e -> c16:p12:w [color="black", fontcolor="black", label=""];
+n4:e -> c16:p11:w [color="black", fontcolor="black", label=""];
+n5 [ shape=diamond, label="$5.Y[0]" ];
+n5:e -> c15:p11:w [color="black", fontcolor="black", label=""];
+n5:e -> c16:p9:w [color="black", fontcolor="black", label=""];
+n6 [ shape=diamond, label="$6.Y[0]" ];
+n6:e -> c14:p9:w [color="black", fontcolor="black", label=""];
+n6:e -> c15:p12:w [color="black", fontcolor="black", label=""];
+n7:e -> c14:p12:w [color="black", fontcolor="black", label=""];
+n8:e -> c14:p13:w [color="black", fontcolor="black", label=""];
+n9:e -> c15:p9:w [color="black", fontcolor="black", label=""];
+}

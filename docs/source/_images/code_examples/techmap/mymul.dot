@@ -1,0 +1,29 @@
+digraph "test_mapped" {
+rankdir="LR";
+remincross=true;
+n1 [ shape=octagon, label="A[0]", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="Y", color="black", fontcolor="black"];
+n6 [ shape=octagon, label="B", color="black", fontcolor="black"];
+n7 [ shape=octagon, label="A[1]", color="black", fontcolor="black"];
+v0 [ label="2'00" ];
+c9 [ shape=record, label="{{<p8> A|<p6> B}|$7\n$add|{<p5> Y}}",  ];
+c11 [ shape=record, label="{{<p8> A|<p6> B|<p10> S}|$11\n$mux|{<p5> Y}}",  ];
+c12 [ shape=record, label="{{<p8> A|<p6> B}|$9\n$add|{<p5> Y}}",  ];
+x1 [ shape=record, style=rounded, label="<s1> 0:0 - 1:1 |0 -&gt; 0:0 ", color="black", fontcolor="black" ];
+x1:e -> c12:p6:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+v2 [ label="2'00" ];
+c13 [ shape=record, label="{{<p8> A|<p6> B|<p10> S}|$14\n$mux|{<p5> Y}}",  ];
+n1:e -> c13:p10:w [color="black", fontcolor="black", label=""];
+c12:p5:e -> c11:p6:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c9:p5:e -> c13:p6:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4 [ shape=point ];
+c13:p5:e -> n4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> c11:p8:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> c12:p8:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c11:p5:e -> n5:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> c9:p6:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> x1:s1:w [color="black", fontcolor="black", label=""];
+n7:e -> c11:p10:w [color="black", fontcolor="black", label=""];
+v0:e -> c9:p8:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+v2:e -> c13:p8:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}
